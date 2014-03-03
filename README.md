@@ -1,4 +1,4 @@
-# Sample sbt project with dependency on scala-xml module
+# Depend on Scala modules like a pro
 
 A sample project which demonstrates recommended configuration for sbt projects that depend on newly spawned scala modules:
 
