@@ -18,6 +18,16 @@
       <artifactId>scala-xml_${scalaVersion}</artifactId>
       <version>1.0.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-parser-combinators_${scalaVersion}</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-swing_${scalaVersion}</artifactId>
+      <version>1.0.0</version>
+    </dependency>
   </dependencies>
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>

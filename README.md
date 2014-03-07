@@ -38,6 +38,16 @@ This to depend on scala-xml module with assumption that you have `scalaVersion` 
   <artifactId>scala-xml_${scalaVersion}</artifactId>
   <version>1.0.0</version>
 </dependency>
+<dependency>
+  <groupId>org.scala-lang.modules</groupId>
+  <artifactId>scala-parser-combinators_${scalaVersion}</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>org.scala-lang.modules</groupId>
+  <artifactId>scala-swing_${scalaVersion}</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
 
 *NOTE*: Due to an [issue](https://issues.scala-lang.org/browse/SI-8358) in Scala compiler, your project that depends on scala-xml will compile with Scala 2.11 even if you do not declare the dependency on `scala-xml` module. However, it will fail at runtime due to missing dependency. In order to prevent that mistake we offer a workaround. Add `-nobootcp` Scala compiler option which will make scala-xml invisible to compilation classpath and your code will fail to compile when the dependency on `scala-xml` is missing. Check sample pom.xml for details.
