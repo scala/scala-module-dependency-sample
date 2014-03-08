@@ -30,24 +30,29 @@ libraryDependencies := {
 
 ## Maven sample
 
-This to depend on scala-xml module with assumption that you have `scalaVersion` property defined in your pom.xml file. If you need to depend on scala-parser-combinators just edit the code snippet accordingly. If you are just looking for copy&paste snippet for your `pom.xml` file, here it is:
+This to depend on scala-xml module with assumption that you have `scalaBinaryVersion` property defined in your pom.xml file. The `scalaBinaryVersion` should be set to `2.11.0-RC1` for Scala 2.11.0-RC1 but should be truncated to `2.11` once Scala 2.11.0 final is out. If you are just looking for copy&paste snippet for your `pom.xml` file, here it is:
 
 ```xml
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-xml_${scalaVersion}</artifactId>
+  <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
   <version>1.0.0</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-parser-combinators_${scalaVersion}</artifactId>
+  <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
   <version>1.0.0</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-swing_${scalaVersion}</artifactId>
+  <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
   <version>1.0.0</version>
 </dependency>
 ```
 
 *NOTE*: Due to an [issue](https://issues.scala-lang.org/browse/SI-8358) in Scala compiler, your project that depends on scala-xml will compile with Scala 2.11 even if you do not declare the dependency on `scala-xml` module. However, it will fail at runtime due to missing dependency. In order to prevent that mistake we offer a workaround. Add `-nobootcp` Scala compiler option which will make scala-xml invisible to compilation classpath and your code will fail to compile when the dependency on `scala-xml` is missing. Check sample pom.xml for details.
+
+### Scala cross-versioning with Maven
+
+The snippet provided above allows you to declare dependencies on modules shipped against Scala 2.11. If you would like to
+support building your project with both Scala 2.10 and 2.11 at the same time you'll need to use [Maven profiles](http://maven.apache.org/guides/introduction/introduction-to-profiles.html). Check the `pom.xml` file in the sample project for details how to set up Maven profiles for supporting different Scala versions.
