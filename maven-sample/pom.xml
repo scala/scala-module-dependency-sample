@@ -13,9 +13,9 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.11.0-RC1</scalaVersion>
+        <scalaVersion>2.11.0</scalaVersion>
         <!-- change to "2.11" once Scala 2.11.0 final is out -->
-        <scalaBinaryVersion>2.11.0-RC1</scalaBinaryVersion>
+        <scalaBinaryVersion>2.11</scalaBinaryVersion>
       </properties>
       <dependencies>
           <dependency>
@@ -26,17 +26,17 @@
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
           </dependency>
       </dependencies>
     </profile>

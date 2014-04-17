@@ -13,14 +13,15 @@ This sample demonstrates how to conditionally depend on all modules. If use only
 ```scala
 // add scala-xml dependency when needed (for Scala 2.11 and newer) in a robust way
 // this mechanism supports cross-version publishing
+// taken from: http://github.com/scala/scala-module-dependency-sample
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
     // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
-        "org.scala-lang.modules" %% "scala-xml" % "1.0.0",
-        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.0",
-        "org.scala-lang.modules" %% "scala-swing" % "1.0.0")
+        "org.scala-lang.modules" %% "scala-xml" % "1.0.1",
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.1",
+        "org.scala-lang.modules" %% "scala-swing" % "1.0.1")
     case _ =>
       // or just libraryDependencies.value if you don't depend on scala-swing
       libraryDependencies.value :+ "org.scala-lang" % "scala-swing" % scalaVersion.value
@@ -30,23 +31,24 @@ libraryDependencies := {
 
 ## Maven sample
 
-This to depend on scala-xml module with assumption that you have `scalaBinaryVersion` property defined in your pom.xml file. The `scalaBinaryVersion` should be set to `2.11.0-RC1` for Scala 2.11.0-RC1 but should be truncated to `2.11` once Scala 2.11.0 final is out. If you are just looking for copy&paste snippet for your `pom.xml` file, here it is:
+This to depend on scala-xml module with assumption that you have `scalaBinaryVersion` property defined in your pom.xml file. The `scalaBinaryVersion` should be set to `2.11` for Scala 2.11.0. If you are just looking for copy&paste snippet for your `pom.xml` file, here it is:
 
 ```xml
+<!-- taken from: http://github.com/scala/scala-module-dependency-sample -->
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
