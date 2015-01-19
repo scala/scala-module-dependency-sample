@@ -13,7 +13,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.11.0</scalaVersion>
+        <scalaVersion>2.11.5</scalaVersion>
         <!-- change to "2.11" once Scala 2.11.0 final is out -->
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
       </properties>
@@ -26,12 +26,12 @@
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
@@ -43,7 +43,7 @@
     <profile>
       <id>scala-2.10</id>
       <properties>
-        <scalaVersion>2.10.3</scalaVersion>
+        <scalaVersion>2.10.4</scalaVersion>
         <scalaBinaryVersion>2.10</scalaBinaryVersion>
       </properties>
       <dependencies>
