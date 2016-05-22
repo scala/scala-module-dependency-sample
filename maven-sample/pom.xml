@@ -13,8 +13,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.11.5</scalaVersion>
-        <!-- change to "2.11" once Scala 2.11.0 final is out -->
+        <scalaVersion>2.11.8</scalaVersion>
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
       </properties>
       <dependencies>
@@ -43,7 +42,7 @@
     <profile>
       <id>scala-2.10</id>
       <properties>
-        <scalaVersion>2.10.4</scalaVersion>
+        <scalaVersion>2.10.6</scalaVersion>
         <scalaBinaryVersion>2.10</scalaBinaryVersion>
       </properties>
       <dependencies>
@@ -74,7 +73,7 @@
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>3.1.6</version>
+        <version>3.2.1</version>
         <executions>
           <execution>
             <goals>
