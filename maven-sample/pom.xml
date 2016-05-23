@@ -25,17 +25,17 @@
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.5</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
           </dependency>
       </dependencies>
     </profile>
