@@ -13,8 +13,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.11.5</scalaVersion>
-        <!-- change to "2.11" once Scala 2.11.0 final is out -->
+        <scalaVersion>2.11.8</scalaVersion>
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
       </properties>
       <dependencies>
@@ -26,24 +25,24 @@
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.5</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
           </dependency>
       </dependencies>
     </profile>
     <profile>
       <id>scala-2.10</id>
       <properties>
-        <scalaVersion>2.10.4</scalaVersion>
+        <scalaVersion>2.10.6</scalaVersion>
         <scalaBinaryVersion>2.10</scalaBinaryVersion>
       </properties>
       <dependencies>
@@ -74,7 +73,7 @@
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>3.1.6</version>
+        <version>3.2.1</version>
         <executions>
           <execution>
             <goals>
