@@ -16,6 +16,12 @@ This sample demonstrates how to conditionally depend on all modules. If use only
 // taken from: http://github.com/scala/scala-module-dependency-sample
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
+    // if scala 2.12+ is used, use scala-swing 2.x
+    case Some((2, scalaMajor)) if scalaMajor >= 12 =>
+      libraryDependencies.value ++ Seq(
+        "org.scala-lang.modules" %% "scala-xml" % "1.0.3",
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.3",
+        "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
     // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
@@ -57,4 +63,4 @@ This to depend on scala-xml module with assumption that you have `scalaBinaryVer
 ### Scala cross-versioning with Maven
 
 The snippet provided above allows you to declare dependencies on modules shipped against Scala 2.11. If you would like to
-support building your project with both Scala 2.10 and 2.11 at the same time you'll need to use [Maven profiles](http://maven.apache.org/guides/introduction/introduction-to-profiles.html). Check the `pom.xml` file in the sample project for details how to set up Maven profiles for supporting different Scala versions.
+support building your project with both Scala 2.10, 2.11 and 2.12 at the same time you'll need to use [Maven profiles](http://maven.apache.org/guides/introduction/introduction-to-profiles.html). Check the `pom.xml` file in the sample project for details how to set up Maven profiles for supporting different Scala versions.

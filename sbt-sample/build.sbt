@@ -4,9 +4,9 @@ organization := "sample"
 
 version := "1.0"
 
-crossScalaVersions := Seq("2.11.8", "2.10.5")
+crossScalaVersions := Seq("2.12.0-M4", "2.11.8", "2.10.5")
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.0-M4"
 
 // add scala-xml dependency when needed (for Scala 2.11 and newer) in a robust way
 // this mechanism supports cross-version publishing
@@ -17,7 +17,7 @@ libraryDependencies := {
       libraryDependencies.value ++ Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.5",
         "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
-        "org.scala-lang.modules" %% "scala-swing" % "1.0.2")
+        "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
     case _ =>
       // or just libraryDependencies.value if you don't depend on scala-swing
       libraryDependencies.value :+ "org.scala-lang" % "scala-swing" % scalaVersion.value
