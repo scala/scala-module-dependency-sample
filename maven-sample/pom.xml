@@ -4,7 +4,7 @@
   <groupId>sample</groupId>
   <artifactId>scala-module-dependency-sample</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <!-- Maven profiles allow you to support both Scala 2.10 and Scala 2.11 with
+  <!-- Maven profiles allow you to support both Scala 2.10, 2.11 and Scala 2.12 with
     the right dependencies for modules specified for each version separately -->
   <profiles>
     <profile>
@@ -13,8 +13,8 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.12.0-M4</scalaVersion>
-        <scalaBinaryVersion>2.12.0-M4</scalaBinaryVersion>
+        <scalaVersion>2.12.0-RC1</scalaVersion>
+        <scalaBinaryVersion>2.12.0-RC1</scalaBinaryVersion>
       </properties>
       <dependencies>
           <dependency>

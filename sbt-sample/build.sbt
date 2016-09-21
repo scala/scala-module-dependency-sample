@@ -4,9 +4,9 @@ organization := "sample"
 
 version := "1.0"
 
-crossScalaVersions := Seq("2.12.0-M4", "2.11.8", "2.10.5")
+crossScalaVersions := Seq("2.12.0-RC1", "2.11.8", "2.10.6")
 
-scalaVersion := "2.12.0-M4"
+scalaVersion := "2.12.0-RC1"
 
 // add scala-xml dependency when needed (for Scala 2.11 and newer) in a robust way
 // this mechanism supports cross-version publishing
