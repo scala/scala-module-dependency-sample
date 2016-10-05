@@ -15,7 +15,7 @@ libraryDependencies := {
     // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
-        "org.scala-lang.modules" %% "scala-xml" % "1.0.5",
+        "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
         "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
         "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
     case _ =>

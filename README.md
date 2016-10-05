@@ -19,15 +19,15 @@ libraryDependencies := {
     // if scala 2.12+ is used, use scala-swing 2.x
     case Some((2, scalaMajor)) if scalaMajor >= 12 =>
       libraryDependencies.value ++ Seq(
-        "org.scala-lang.modules" %% "scala-xml" % "1.0.3",
-        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.3",
+        "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
         "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
     // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
-        "org.scala-lang.modules" %% "scala-xml" % "1.0.3",
-        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.3",
-        "org.scala-lang.modules" %% "scala-swing" % "1.0.1")
+        "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
+        "org.scala-lang.modules" %% "scala-swing" % "1.0.2")
     case _ =>
       // or just libraryDependencies.value if you don't depend on scala-swing
       libraryDependencies.value :+ "org.scala-lang" % "scala-swing" % scalaVersion.value
@@ -44,17 +44,17 @@ This to depend on scala-xml module with assumption that you have `scalaBinaryVer
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.6</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
   <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
