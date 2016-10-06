@@ -18,18 +18,17 @@ These modules were split out from the Scala standard library, beginning with Sca
 This sample demonstrates how to conditionally depend on all modules. If use only on some of the modules just edit the `libraryDependencies` definition accordingly. If you are just looking for a copy&paste snippet for your `build.sbt` file, here it is:
 
 ```scala
-// add scala-xml dependency when needed (for Scala 2.11 and newer) in a robust way
-// this mechanism supports cross-version publishing
+// add dependencies on standard Scala modules, in a way
+// supporting cross-version publishing
 // taken from: http://github.com/scala/scala-module-dependency-sample
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
-    // if scala 2.12+ is used, use scala-swing 2.x
+    // if Scala 2.12+ is used, use scala-swing 2.x
     case Some((2, scalaMajor)) if scalaMajor >= 12 =>
       libraryDependencies.value ++ Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
         "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
         "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
-    // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
