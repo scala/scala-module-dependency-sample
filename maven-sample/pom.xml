@@ -4,14 +4,43 @@
   <groupId>sample</groupId>
   <artifactId>scala-module-dependency-sample</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <!-- Maven profiles allow you to support both Scala 2.10 and Scala 2.11 with
+  <!-- Maven profiles allow you to support both Scala 2.10, 2.11 and Scala 2.12 with
     the right dependencies for modules specified for each version separately -->
   <profiles>
     <profile>
-      <id>scala-2.11</id>
+      <id>scala-2.12</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
+      <properties>
+        <scalaVersion>2.12.0-RC1</scalaVersion>
+        <scalaBinaryVersion>2.12.0-RC1</scalaBinaryVersion>
+      </properties>
+      <dependencies>
+          <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scalaVersion}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
+            <version>1.0.6</version>
+          </dependency>
+          <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
+            <version>1.0.4</version>
+          </dependency>
+          <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
+            <version>2.0.0-M2</version>
+          </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>scala-2.11</id>
       <properties>
         <scalaVersion>2.11.8</scalaVersion>
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
@@ -25,7 +54,7 @@
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
           <dependency>
             <groupId>org.scala-lang.modules</groupId>
