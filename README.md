@@ -1,28 +1,34 @@
 # Depend on Scala modules like a pro
 
-Two sample projects (Sbt and Maven) which demonstrate recommended configuration for projects that depend on newly spawned scala modules:
+This repository shows how to use these build tools:
 
-  * scala-xml for all classes that live in `scala.xml` package
-  * scala-parser-combinators for all classes that live in `scala.util.parsing` package
-  * scala-swing that has been brought into line with the rest of modules and changed its Maven group id
+  * sbt
+  * Maven
+
+to depend on Scala standard modules such as:
+
+  * scala-xml, containing the `scala.xml` package
+  * scala-parser-combinators, containing the `scala.util.parsing` package
+  * scala-swing, containing the `scala.swing` package
+
+These modules were split out from the Scala standard library, beginning with Scala 2.11.
 
 ## Sbt sample
 
 This sample demonstrates how to conditionally depend on all modules. If use only on some of the modules just edit the `libraryDependencies` definition accordingly. If you are just looking for a copy&paste snippet for your `build.sbt` file, here it is:
 
 ```scala
-// add scala-xml dependency when needed (for Scala 2.11 and newer) in a robust way
-// this mechanism supports cross-version publishing
+// add dependencies on standard Scala modules, in a way
+// supporting cross-version publishing
 // taken from: http://github.com/scala/scala-module-dependency-sample
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
-    // if scala 2.12+ is used, use scala-swing 2.x
+    // if Scala 2.12+ is used, use scala-swing 2.x
     case Some((2, scalaMajor)) if scalaMajor >= 12 =>
       libraryDependencies.value ++ Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
         "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
         "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2")
-    // if scala 2.11+ is used, add dependency on scala-xml module
     case Some((2, scalaMajor)) if scalaMajor >= 11 =>
       libraryDependencies.value ++ Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
@@ -37,7 +43,7 @@ libraryDependencies := {
 
 ## Maven sample
 
-This to depend on scala-xml module with assumption that you have `scalaBinaryVersion` property defined in your pom.xml file. The `scalaBinaryVersion` should be set to `2.11` for Scala 2.11.0. If you are just looking for copy&paste snippet for your `pom.xml` file, here it is:
+The following `pom.xml` snippet assumes you define a `scalaBinaryVersion` property in your pom.xml file. For example, the `scalaBinaryVersion` should be set to `2.11` for any Scala 2.11.x version.
 
 ```xml
 <!-- taken from: http://github.com/scala/scala-module-dependency-sample -->
@@ -58,7 +64,7 @@ This to depend on scala-xml module with assumption that you have `scalaBinaryVer
 </dependency>
 ```
 
-*NOTE*: Due to an [issue](https://issues.scala-lang.org/browse/SI-8358) in Scala compiler a project that uses scala-xml will compile successfully on Scala 2.11, even without an explicit dependency on the `scala-xml` module. However, it will fail at runtime due to missing dependency. In order to prevent that mistake we offer a workaround. Add `-nobootcp` Scala compiler option which will make scala-xml invisible to compilation classpath and your code will fail to compile when the dependency on `scala-xml` is missing. Check sample pom.xml for details.
+*NOTE*: Due to an [issue](https://issues.scala-lang.org/browse/SI-8358) in the Scala compiler, a project that uses scala-xml will compile successfully on Scala 2.11 even without an explicit dependency on the `scala-xml` module. However, it will fail at runtime due to missing dependency. In order to prevent that mistake we offer a workaround. Add `-nobootcp` Scala compiler option which will make scala-xml invisible to compilation classpath and your code will fail to compile when the dependency on `scala-xml` is missing. Check sample pom.xml for details.
 
 ### Scala cross-versioning with Maven
 
