@@ -4,9 +4,9 @@ organization := "sample"
 
 version := "1.0"
 
-crossScalaVersions := Seq("2.12.0-RC1", "2.11.8", "2.10.6")
+crossScalaVersions := Seq("2.12.0", "2.11.8", "2.10.6")
 
-scalaVersion := "2.12.0-RC1"
+scalaVersion := "2.12.0"
 
 // add dependencies on standard Scala modules, in a way
 // supporting cross-version publishing

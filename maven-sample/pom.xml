@@ -13,8 +13,8 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <scalaVersion>2.12.0-RC1</scalaVersion>
-        <scalaBinaryVersion>2.12.0-RC1</scalaBinaryVersion>
+        <scalaVersion>2.12.0</scalaVersion>
+        <scalaBinaryVersion>2.12</scalaBinaryVersion>
       </properties>
       <dependencies>
           <dependency>
