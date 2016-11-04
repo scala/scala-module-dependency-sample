@@ -1,14 +1,21 @@
 language: scala
 jdk: oraclejdk8
 scala: dummy # using crossScalaVersions over TRAVIS_SCALA_VERSION
-before_script: cd sbt-sample
-script: sbt +update
+script:
+ - cd sbt-sample
+ - sbt +update
+ - cd -
+ - cd maven-sample
+ - mvn compile
+ - mvn package exec:java -Dexec.mainClass=XMLHelloWorld
 
 cache:
   directories:
     - $HOME/.ivy2/cache
     - $HOME/.sbt
+    - $HOME/.m2
 
 before_cache:
   - find $HOME/.ivy2/cache -name "ivydata-*.properties" -print -delete
   - find $HOME/.sbt        -name "*.lock"               -print -delete
+  - find $HOME/.m2         -name "*.lastUpdated"        -print -delete
