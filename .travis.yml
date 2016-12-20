@@ -4,6 +4,9 @@ scala: dummy # using crossScalaVersions over TRAVIS_SCALA_VERSION
 script:
  - cd sbt-sample
  - sbt +update
+ - sbt ++2.11.8 "runMain ExponentialTransformer"
+ - sbt ++2.12.0 "runMain ExponentialTransformer"
+ - sbt ++2.12.1 "runMain ExponentialTransformer"
  - cd -
  - cd maven-sample
  - mvn compile
