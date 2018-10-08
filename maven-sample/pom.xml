@@ -4,6 +4,9 @@
   <groupId>sample</groupId>
   <artifactId>scala-module-dependency-sample</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <properties>
+    <encoding>UTF-8</encoding>
+  </properties>
   <!-- Maven profiles allow you to support both Scala 2.10, 2.11 and Scala 2.12 with
     the right dependencies for modules specified for each version separately -->
   <profiles>
