@@ -43,23 +43,23 @@ libraryDependencies := {
 
 ## Maven sample
 
-The following `pom.xml` snippet assumes you define a `scalaBinaryVersion` property in your pom.xml file. For example, the `scalaBinaryVersion` should be set to `2.11` for any Scala 2.11.x version.
+The following `pom.xml` snippet assumes you define a `scala.compat.version` property in your pom.xml file for scala-maven-plugin 3.1.6 or later. For example, the `scala.compat.version` should be set to `2.11` for any Scala 2.11.x version.
 
 ```xml
 <!-- taken from: http://github.com/scala/scala-module-dependency-sample -->
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
+  <artifactId>scala-xml_${scala.compat.version}</artifactId>
   <version>1.0.6</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
+  <artifactId>scala-parser-combinators_${scala.compat.version}</artifactId>
   <version>1.0.4</version>
 </dependency>
 <dependency>
   <groupId>org.scala-lang.modules</groupId>
-  <artifactId>scala-swing_${scalaBinaryVersion}</artifactId>
+  <artifactId>scala-swing_${scala.compat.version}</artifactId>
   <version>1.0.2</version>
 </dependency>
 ```
