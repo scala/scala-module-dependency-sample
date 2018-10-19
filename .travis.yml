@@ -6,8 +6,12 @@ script:
  - sbt +update
  - cd -
  - cd maven-sample
- - mvn compile
- - mvn package exec:java -Dexec.mainClass=XMLHelloWorld
+ - mvn -Pscala-2.10 clean compile package
+ - mvn -Pscala-2.10 exec:java -Dexec.mainClass=XMLHelloWorld
+ - mvn -Pscala-2.11 clean compile package
+ - mvn -Pscala-2.11 exec:java -Dexec.mainClass=XMLHelloWorld
+ - mvn -Pscala-2.12 clean compile package
+ - mvn -Pscala-2.12 exec:java -Dexec.mainClass=XMLHelloWorld
 
 cache:
   directories:
